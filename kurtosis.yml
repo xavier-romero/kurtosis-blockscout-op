@@ -1,0 +1,5 @@
+name: github.com/xavier-romero/kurtosis-op-blockscout
+description: |-
+  Blockscout
+  ========
+  This package allows to provision a Blockscout Stack against Optimism based chain
