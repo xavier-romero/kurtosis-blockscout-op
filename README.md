@@ -16,7 +16,7 @@ Create a params.yaml with config params
 
 - trace_url: RPC URL with debug endpoints enabled, rpc_url will be used if omitted
 - chain_id: l2 chain id, if omitted it will be automatically determined through rpc_url
-- swap_url: URL for swap, will just enable a button link on the top right
+<!-- - swap_url: URL for swap, will just enable a button link on the top right -->
 - l1_explorer: explorer URL for L1 network
 - l1_rpc_url: RPC URL for L1
 - deployment_suffix: specific for kurtosis, will append this suffic to all services

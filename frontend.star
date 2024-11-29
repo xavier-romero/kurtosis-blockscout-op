@@ -2,7 +2,7 @@ def run(plan, cfg, stack_info):
     title = cfg["TITLE"]
     chain_id = cfg["COMMON"]["chain_id"]
     l1_explorer = cfg["COMMON"]["l1_explorer"]
-    swap_url = cfg["COMMON"].get("swap_url")
+    # swap_url = cfg["COMMON"].get("swap_url")
     backend_exposed = cfg["COMMON"].get("backend_exposed", False)
 
     service_port = cfg["PORT"]
@@ -41,8 +41,8 @@ def run(plan, cfg, stack_info):
         "NEXT_PUBLIC_ROLLUP_TYPE": "optimistic",
         "NEXT_PUBLIC_ROLLUP_L1_BASE_URL": l1_explorer,
     }
-    if swap_url:
-        env_vars["NEXT_PUBLIC_SWAP_BUTTON_URL"] = swap_url
+    # if swap_url:
+    #     env_vars["NEXT_PUBLIC_SWAP_BUTTON_URL"] = swap_url
 
     service = plan.add_service(
         name=service_name,
