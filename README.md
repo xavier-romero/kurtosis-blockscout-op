@@ -35,11 +35,11 @@ Find config example files under [```configs```](configs) folder
 
 ## Execution
 Demo execution for zkEVM Cardona Testnet:
-```kurtosis run github.com/xavier-romero/kurtosis-blockscout --args-file configs/zkevm-cardona.yaml --enclave bs-cardona```
+```kurtosis run github.com/xavier-romero/kurtosis-op-blockscout --args-file configs/zkevm-cardona.yaml --enclave bs-cardona```
 Point your browser to [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 Demo execution for zkEVM Mainnet:
-```kurtosis run github.com/xavier-romero/kurtosis-blockscout --args-file configs/zkevm-mainnet.yaml --enclave bs-mainnet```
+```kurtosis run github.com/xavier-romero/kurtosis-op-blockscout --args-file configs/zkevm-mainnet.yaml --enclave bs-mainnet```
 Point your browser to [http://127.0.0.1:8001](http://127.0.0.1:8001)
 
 
