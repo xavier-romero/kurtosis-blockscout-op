@@ -3,10 +3,10 @@
 DB_PORT = 5432
 TITLE = "Polygon CDK"
 IMAGE_POSTGRES = "postgres:16.2"
-IMAGE_BACKEND = "blockscout/blockscout-zkevm:6.5.0"
-IMAGE_STATS = "ghcr.io/blockscout/stats:main"
-IMAGE_VISUALIZE = "ghcr.io/blockscout/visualizer:main"
-IMAGE_FRONTEND = "ghcr.io/blockscout/frontend:v1.30.0"
+IMAGE_BACKEND = "blockscout/blockscout-optimism:6.9.2"
+IMAGE_STATS = "ghcr.io/blockscout/stats:v2.2.3"
+IMAGE_VISUALIZE = "ghcr.io/blockscout/visualizer:v0.2.1"
+IMAGE_FRONTEND = "ghcr.io/blockscout/frontend:v1.36.3"
 
 
 def get_config(args, db_host=None, get_db_configs=False):

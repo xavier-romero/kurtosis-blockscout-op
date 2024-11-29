@@ -1,9 +1,11 @@
-def run(plan, cfg, bs_connection_string):
+def run(plan, cfg, bs_connection_string, stack_info):
     host = cfg["DB"]["HOST"]
     port = cfg["DB"]["PORT"]
     db = cfg["DB"]["NAME"]
     user = cfg["DB"]["USER"]
     password = cfg["DB"]["PASSWORD"]
+
+    api_url = "http://{}:{}".format(stack_info["api_host"], stack_info["api_port"])
 
     connection_string = (
         "postgresql://"
@@ -38,6 +40,7 @@ def run(plan, cfg, bs_connection_string):
                 "STATS__CREATE_DATABASE": "false",
                 "STATS__RUN_MIGRATIONS": "true",
                 "STATS__SERVER__HTTP__CORS__ENABLED": "false",
+                "STATS__BLOCKSCOUT_API_URL": api_url,
             },
         ),
     )

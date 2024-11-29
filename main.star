@@ -31,20 +31,21 @@ def run(plan, args):
         plan, cfg.get("BACKEND")
     )
 
+    stack_info = {
+        "api_host": bs_service.ip_address,
+        "api_port": bs_service.ports.values()[0].number
+    }
     stats_service = import_module(stats).run(
-        plan, cfg.get("STATS"), bs_connection_string
+        plan, cfg.get("STATS"), bs_connection_string, stack_info
     )
 
     visualize_service = import_module(visualize).run(plan, cfg.get("VISUALIZE"))
 
     plan.print(bs_service.ports.values())
 
-    stack_info = {
-        "api_host": bs_service.ip_address,
-        "api_port": bs_service.ports.values()[0].number,
-        "stats_host": stats_service.ip_address,
-        "stats_port": stats_service.ports.values()[0].number,
-        "visualize_host": visualize_service.ip_address,
-        "visualize_port": visualize_service.ports.values()[0].number,
-    }
+    stack_info["stats_host"] = stats_service.ip_address
+    stack_info["stats_port"] = stats_service.ports.values()[0].number
+    stack_info["visualize_host"] = visualize_service.ip_address
+    stack_info["visualize_port"] = visualize_service.ports.values()[0].number
+
     import_module(frontend).run(plan, cfg.get("FRONTEND"), stack_info)
