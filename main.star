@@ -33,7 +33,7 @@ def run(plan, args):
 
     stack_info = {
         "api_host": bs_service.ip_address,
-        "api_port": bs_service.ports.values()[0].number
+        "api_port": bs_service.ports.values()[0].number,
     }
     stats_service = import_module(stats).run(
         plan, cfg.get("STATS"), bs_connection_string, stack_info

@@ -53,6 +53,11 @@ def run(plan, cfg):
         "API_V2_ENABLED": "true",
         "BLOCKSCOUT_PROTOCOL": "http",
         "BRIDGED_TOKENS_ENABLED": "true",
+        "INDEXER_OPTIMISM_L1_SYSTEM_CONFIG_CONTRACT": cfg["l1_sysconfig_addr"],
+        "INDEXER_OPTIMISM_L2_BATCH_GENESIS_BLOCK_NUMBER": "0",
+        "INDEXER_OPTIMISM_BLOCK_DURATION": str(cfg["block_time"]),
+        "INDEXER_OPTIMISM_L1_PORTAL_CONTRACT": cfg["l1_opportal_addr"],
+        "INDEXER_OPTIMISM_L1_BATCH_INBOX": cfg["l1_batchinbox_addr"]
     }
     if l1_rpc_url:
         env_vars["INDEXER_OPTIMISM_L1_RPC"] = l1_rpc_url

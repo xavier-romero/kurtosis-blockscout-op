@@ -3,7 +3,8 @@
 DB_PORT = 5432
 TITLE = "Polygon CDK"
 IMAGE_POSTGRES = "postgres:16.2"
-IMAGE_BACKEND = "blockscout/blockscout-optimism:6.9.2"
+# IMAGE_BACKEND = "blockscout/blockscout-optimism:6.9.2"
+IMAGE_BACKEND = "blockscout/blockscout-optimism:7.0.2-indexer"
 IMAGE_STATS = "ghcr.io/blockscout/stats:v2.2.3"
 IMAGE_VISUALIZE = "ghcr.io/blockscout/visualizer:v0.2.1"
 IMAGE_FRONTEND = "ghcr.io/blockscout/frontend:v1.36.3"
@@ -39,6 +40,10 @@ def get_config(args, db_host=None, get_db_configs=False):
             "PORT": args.get("blockscot_backend_port", 4004),
             "PORT_NAME": "backend",
             "TITLE": TITLE,
+            "l1_sysconfig_addr": args.get("l1_sysconfig_addr", "0x0"),
+            "l1_opportal_addr": args.get("l1_opportal_addr", "0x0"),
+            "block_time": args.get("block_time", 2),
+            "l1_batchinbox_addr": args.get("l1_batchinbox_addr"),
         },
         "STATS": {
             "DB": {
