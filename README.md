@@ -27,9 +27,10 @@ Create a params.yaml with config params
 #!/bin/bash
 ENCLAVE_NAME="blockscout"
 KURTOSIS_ARGS='{
-    "rpc_url": "http://34.175.121.98:8545",
-    "ws_url": "ws://34.175.121.98:8546",
+    "rpc_url": "http://34.99.99.99:8545",
+    "ws_url": "ws://34.99.99.99:8546",
     "chain_id": 23456,
+    "l1_rpc_url": "https://sepolia.gateway.tenderly.co/xxxxxxxxxxxxxxxxxx",
     "l1_sysconfig_addr": "0xcd5baacc94686159001ab7f02843c4f2b4b213c5",
     "l1_opportal_addr": "0x86ab5f2b74b94afa5940621e444c7af4cb033e11",
     "block_time": 6,
